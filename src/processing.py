@@ -1,7 +1,7 @@
 from typing import Iterable, Any
 
 
-def filter_by_state(dictionaries: Iterable[list[dict[Any]]], state = 'EXECUTED') -> list:
+def filter_by_state(dictionaries: Iterable[list[dict[Any]]], state='EXECUTED') -> list:
     """Функция для выведения данных по определенному значению"""
     executed_list = []
     for i in dictionaries:
@@ -12,5 +12,5 @@ def filter_by_state(dictionaries: Iterable[list[dict[Any]]], state = 'EXECUTED')
 
 def sort_by_date(dictionaries: Iterable[list[dict[Any]]], reverse=True) -> list:
     """Функция для сортировки по датам"""
-    list_for_date = sorted(dictionaries, key=lambda x: x['date'], reverse = reverse)
+    list_for_date = sorted(dictionaries, key=lambda x: x['date'], reverse=reverse)
     return list_for_date
