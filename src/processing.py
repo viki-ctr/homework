@@ -10,7 +10,7 @@ def filter_by_state(dictionaries: Iterable[list[dict[Any]]], state = 'EXECUTED')
     return executed_list
 
 
-def sort_by_date(dictionaries: Iterable[list[dict[Any]]], reverse = True) -> list:
+def sort_by_date(dictionaries: Iterable[list[dict[Any]]], reverse=True) -> list:
     """Функция для сортировки по датам"""
-    list_for_date = sorted(dictionaries, key=lambda x: x['date'], reverse=True)
+    list_for_date = sorted(dictionaries, key=lambda x: x['date'], reverse = reverse)
     return list_for_date
