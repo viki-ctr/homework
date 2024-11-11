@@ -1,16 +1,16 @@
-from typing import Iterable, Any
+from typing import Any, Iterable
 
 
-def filter_by_state(dictionaries: Iterable[list[dict[Any]]], state='EXECUTED') -> list:
+def filter_by_state(dictionaries: Iterable[dict], state: Any = "EXECUTED") -> list[Any]:
     """Функция для выведения данных по определенному значению"""
     executed_list = []
-    for i in dictionaries:
-        if i['state'] == state:
-            executed_list.append(i)
+    for meaning in dictionaries:
+        if meaning["state"] == state:
+            executed_list.append(meaning)
     return executed_list
 
 
-def sort_by_date(dictionaries: Iterable[list[dict[Any]]], reverse=True) -> list:
+def sort_by_date(dictionaries: Iterable[dict], reverse: bool = True) -> list[Any]:
     """Функция для сортировки по датам"""
-    list_for_date = sorted(dictionaries, key=lambda x: x['date'], reverse=reverse)
+    list_for_date = sorted(dictionaries, key=lambda x: x["date"], reverse=reverse)
     return list_for_date
