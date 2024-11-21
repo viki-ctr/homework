@@ -58,8 +58,6 @@ def get_date(info: Union[str, list]) -> str:
             return "Неверный формат данных"
 
         # Возвращаем дату в нужном формате
-
         return parsed_date.strftime("%d.%m.%Y")
     except Exception as e:
-
         return f"Ошибка при обработке даты: {e}"
