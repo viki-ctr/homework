@@ -103,7 +103,6 @@ def transactions_list_invalid():
                         "code": "RUB"
                     }
                 },
-                "description": "Перевод организации",
                 "from": "Счет 75106830613657916952",
                 "to": "Счет 11776614605963066702"
             },
@@ -118,7 +117,6 @@ def transactions_list_invalid():
                         "code": "GBP"
                     }
                 },
-                "description": "Перевод со счета на счет",
                 "from": "Счет 19708645243227258542",
                 "to": "Счет 75651667383060284188"
             },
@@ -133,7 +131,6 @@ def transactions_list_invalid():
                         "code": "BYN"
                     }
                 },
-                "description": "Перевод со счета на счет",
                 "from": "Счет 44812258784861134719",
                 "to": "Счет 74489636417521191160"
             },
@@ -148,7 +145,6 @@ def transactions_list_invalid():
                         "code": "RUB"
                     }
                 },
-                "description": "Перевод с карты на карту",
                 "from": "Visa Classic 6831982476737658",
                 "to": "Visa Platinum 8990922113665229"
             },
@@ -163,7 +159,6 @@ def transactions_list_invalid():
                         "code": "RUB"
                     }
                 },
-                "description": "Перевод организации",
                 "from": "Visa Platinum 1246377376343588",
                 "to": "Счет 14211924144426031657"
             }

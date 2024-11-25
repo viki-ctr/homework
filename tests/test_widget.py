@@ -28,4 +28,4 @@ def test_get_date() -> None:
     assert get_date("2024-11-19T12:34:56.789") == "19.11.2024"
     assert get_date("15-01-2022T12:30:45") == "15.01.2022"
     assert get_date(["2024", "11", "19"]) == "19.11.2024"
-    assert get_date("Некорректная дата") == " Ошибка при обработке даты: Unknown string format: Некорректная дата"
+    assert get_date("Некорректная дата") == "Ошибка при обработке даты: Unknown string format: Некорректная дата"

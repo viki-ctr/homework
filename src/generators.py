@@ -13,9 +13,10 @@ def filter_by_currency(transactions_list: list[dict[Any, Any]], currency="USD") 
                 else:
                     yield "Проверьте корректность данных"
         else:
-            return "Проверьте корректность данных"
+            raise ValueError("Невалидные значения")
     except StopIteration:
         print("Введите новые данные")
+        return
 
 
 def transaction_descriptions(transactions_list: list[dict[Any, Any]]) -> Generator[Any, None, None]:
@@ -25,24 +26,29 @@ def transaction_descriptions(transactions_list: list[dict[Any, Any]]) -> Generat
             for x in transactions_list:
                 yield x["description"]
         if transactions_list == [None]:
-            return "Нет корректных данных"
+            raise KeyError("Невалидные значения")
         else:
-            return "Проверьте корректность данных"
+            raise KeyError("Невалидные значения")
     except StopIteration:
         print("Введите новые данные")
+        return
 
 
 def card_number_generator(start: int, stop: int) -> Generator[str, None, None]:
     """Генератор, который выдает номера банковских карт в формате XXXX XXXX XXXX XXXX"""
+    if not isinstance(start, int) or not isinstance(stop, int):
+        raise NameError("Ошибка типа данных")
     if start > stop:
         raise ValueError("Невалидные значения")
+    if start == 0:
+        raise ValueError("Невалидные значения")
     else:
-        for number in range(start, stop):
+        for number in range(start, stop + 1):
             number_str = str(number)
             if len(number_str) < 16:
                 card_number = "0" * (16 - len(number_str)) + number_str
-            elif len(number_str) == 16:
+                yield f"{card_number[:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:]}"
+            if len(number_str) == 16:
                 card_number = number_str
-            else:
-                return "Невалидные значения"
-        yield f"{card_number[:4]} {card_number[4:9]} {card_number[8:13]} {card_number[13:]}"
+                yield f"{card_number[:4]} {card_number[4:8]} {card_number[8:12]} {card_number[12:]}"
+    return
