@@ -1,0 +1,4 @@
+my_function ERROR : TypeError. Inputs: (1, 'a'), {}
+my_function ERROR : TypeError. Inputs: (1, 'a'), {}
+my_function ERROR : TypeError. Inputs: (1, 'a'), {}
+my_function ERROR : TypeError. Inputs: (1, 'a'), {}
