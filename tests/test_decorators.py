@@ -1,7 +1,6 @@
 from time import time
 
 import pytest
-from mypy.types import NoneTyp
 
 from src.decorators import log, my_function
 
