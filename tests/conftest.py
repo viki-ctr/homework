@@ -1,4 +1,5 @@
 import pytest
+from time import time
 
 
 @pytest.fixture
@@ -169,3 +170,11 @@ def transactions_list_invalid():
 @pytest.fixture
 def transactions_list_empty():
     return []
+
+
+@pytest.fixture
+def time_for_test():
+    time_1 = time()
+    time_2 = time()
+    return time_1, time_2
+
