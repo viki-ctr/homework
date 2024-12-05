@@ -61,3 +61,7 @@ def get_date(info: Union[str, list]) -> str:
         return parsed_date.strftime("%d.%m.%Y")
     except Exception as e:
         return f"Ошибка при обработке даты: {e}"
+
+
+# print(mask_account_card('Maestro 1596837868705199'))
+# print(get_date("2024-11-19T12:34:56.789"))
