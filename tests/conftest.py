@@ -177,4 +177,3 @@ def time_for_test():
     time_1 = time()
     time_2 = time()
     return time_1, time_2
-
