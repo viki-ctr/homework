@@ -1,15 +1,13 @@
 import json
-import os
-from typing import Any
 
 
-def transaction(file: Any) -> list[Any]:
+def transaction(file="C:/Users/vikas/py_prj/homework/data/operations.json"):
     """Функция, принимающая путь до JSON-файла и возвращающая список словарей или пустой список"""
     empty_list = []
-    with open(os.path.abspath(file), "r") as file:
+    with open(file, "r", encoding="UTF-8") as f:
         try:
-            transactions_list = json.loads(file)
-            if len(transactions_list) == 0 or isinstance(transactions_list, list):
+            transactions_list = json.load(f)
+            if len(transactions_list) == 0:
                 return empty_list
             else:
                 empty_list.append(transactions_list)
@@ -18,5 +16,5 @@ def transaction(file: Any) -> list[Any]:
             return empty_list
 
 
-if __name__ == "__main__":
-    path_to_file = os.path.join(os.path.dirname(__file__), "data", "operations.json")
+data = transaction(file="C:/Users/vikas/py_prj/homework/data/operations.json")
+# print(transaction())
