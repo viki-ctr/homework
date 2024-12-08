@@ -1,4 +1,7 @@
-from unittest.mock import Mock, patch
+import pytest
+import unittest
+from unittest.mock import MagicMock, patch, Mock
+import requests
 
 from src.external_api import transaction_amount
 
@@ -18,17 +21,36 @@ def test_transaction_amount():
             }) == 9824.07
 
 
-def test_failed_status_code():
-    mock_response = Mock()
-    mock_response.status_code = 400
-    mock_response.return_value = "Запрос не был успешным. Возможная причина: Bad Request"
-    result = transaction_amount({'operationAmount': {'amount': '9824.07', 'currency': {'name': 'USD', 'code': 'USD'}}})
-    assert result == "Запрос не был успешным. Возможная причина: Bad Request"
+@patch('src.external_api.requests.get')
+def test_successful_status_code(mock_get):
+    mock_response = MagicMock()
+    mock_response.status_code = 200
+    mock_response.json.return_value = {
+        "info": {"rate": 1.0105},
+    }
+    mock_get.return_value = mock_response
+    result = transaction_amount({'operationAmount': {'amount': '9824.07', 'currency': {'name': 'EUR', 'code': 'EUR'}}})
+    assert result == 9825.08
 
 
-# @patch('src.external_api.requests.get')
-# def test_transaction_usd(mocked_get):
-#     mocked_get.return_value.status_code = 200
-#     mocked_get.return_value = 616804.608265
-#     result = transaction_amount({'operationAmount': {'amount': '9824.07', 'currency': {'name': 'USD', 'code': 'USD'}}})
-#     assert result == 616804.608265
+def test_invalid_transaction_format():
+        """Тест для некорректного формата транзакции"""
+        transact = {
+            "operationAmount": {
+                "currency": {"code": "USD"}
+            }
+        }
+        with pytest.raises(KeyError, match="Некорректный формат транзакции."):
+            transaction_amount(transact)
+
+
+def test_request_exception():
+    with patch("src.external_api.requests.get", side_effect=requests.exceptions.RequestException):
+        transact = {
+            "operationAmount": {
+                "amount": "100",
+                "currency": {"code": "USD"}
+            }
+        }
+        result = transaction_amount(transact)
+        assert result is None
