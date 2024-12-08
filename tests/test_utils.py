@@ -14,3 +14,4 @@ def test_transaction_from_json(mock_open: MagicMock) -> None:
     assert transaction(mock_file) == []
     mock_file.read.return_value = ""
     assert transaction(mock_file) == []
+
