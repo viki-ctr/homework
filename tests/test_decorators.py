@@ -4,7 +4,7 @@ from src.decorators import log, my_function
 
 
 def test_log(capsys):
-    @log(filename="src/logs/mylog.txt")
+    @log(filename="logs/mylog.txt")
     def my_function(x, y):
         return x + y
 

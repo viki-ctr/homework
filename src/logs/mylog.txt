@@ -40,3 +40,17 @@ End time: 1733770802.0.
 Result: 3
 my_function ERROR: TypeError. 
 Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1733778229.3. 
+End time: 1733778234.3.
+Result: 3
+my_function ok. 
+Start time: 1733778235.3. 
+End time: 1733778235.3.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1733778371.8. 
+End time: 1733778376.8.
+Result: 3
