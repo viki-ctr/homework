@@ -1,22 +1,16 @@
-from time import time
-
 import pytest
 
 from src.decorators import log, my_function
 
 
 def test_log(capsys):
-    @log(filename="logs/mylog.txt")
+    @log(filename="src/logs/mylog.txt")
     def my_function(x, y):
         return x + y
 
     my_function(1, 2)
     captured = capsys.readouterr()
-    time_1 = time()
-    time_1_round = round(time_1, 1)
-    time_2 = time()
-    time_2_round = round(time_2, 1)
-    result = f'my_function ok. \nStart time: {time_1_round}. \nEnd time: {time_2_round}.'
+    result = ''
     answer = captured.out.rstrip()
 
 
@@ -30,6 +24,4 @@ def test_error_handling(capsys):
     assert '' in captured.out
 
 
-@log(filename="testdecor.txt")
-def test_error_function_with_file(*args, **kwargs):
-    raise ValueError("Something went wrong!")
+

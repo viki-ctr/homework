@@ -14,5 +14,5 @@ def transaction(file="C:/Users/vikas/py_prj/homework/data/operations.json"):
             return []
 
 
-data = transaction(file="C:/Users/vikas/py_prj/homework/data/operations.json")
-# print(transaction())
+# data = transaction(file="C:/Users/vikas/py_prj/homework/data/operations.json")
+print(transaction())

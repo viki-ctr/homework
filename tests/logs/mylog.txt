@@ -1,0 +1,12 @@
+my_function ok. 
+Start time: 1733769479.8. 
+End time: 1733769484.8.
+Result: 3
+my_function ok. 
+Start time: 1733769484.8. 
+End time: 1733769489.8.
+Result: 3
+my_function ERROR : TypeError. Inputs: (1, 'a'), {}my_function ok. 
+Start time: 1733770318.4. 
+End time: 1733770318.4.
+Result: 3

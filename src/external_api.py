@@ -19,10 +19,9 @@ def transaction_amount(transact: dict) -> Any:
             return amount
 
         else:
-            frm = transact["operationAmount"]["currency"]["code"]
             to = "RUB"
             url = f"https://api.apilayer.com/exchangerates_data/convert"
-            payload = {"amount": transact["operationAmount"]["amount"], "from": frm, "to": to}
+            payload = {"amount": transact["operationAmount"]["amount"], "from": currency, "to": to}
             headers = {"apikey": API_KEY}
             response = requests.get(url, headers=headers, params=payload)
             status_code = response.status_code

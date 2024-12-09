@@ -1,0 +1,42 @@
+my_function ok. 
+Start time: 1733770313.3. 
+End time: 1733770318.3.
+Result: 3
+my_function ok. 
+Start time: 1733770353.6. 
+End time: 1733770358.6.
+Result: 3
+my_function ok. 
+Start time: 1733770358.6. 
+End time: 1733770358.6.
+Result: 3
+my_function ok. 
+Start time: 1733770403.3. 
+End time: 1733770408.3.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1733770510.2. 
+End time: 1733770515.2.
+Result: 3
+my_function ok. 
+Start time: 1733770515.2. 
+End time: 1733770515.2.
+Result: 3
+my_function ok. 
+Start time: 1733770751.6. 
+End time: 1733770756.6.
+Result: 3
+my_function ok. 
+Start time: 1733770756.6. 
+End time: 1733770756.6.
+Result: 3
+my_function ok. 
+Start time: 1733770782.4. 
+End time: 1733770787.4.
+Result: 3
+my_function ok. 
+Start time: 1733770787.4. 
+End time: 1733770787.4.
+Result: 3
