@@ -1,10 +1,10 @@
+import os
 from functools import wraps
 from time import sleep, time
 from typing import AnyStr
-import os
 
 
-def log(filename: str = None):
+def log(filename: str):
     """Декоратор, который автоматически логирует начало и конец выполнения функции, ее результаты/возникшие ошибки"""
 
     if filename and isinstance(filename, str):
@@ -20,10 +20,12 @@ def log(filename: str = None):
                 time_2 = time()
                 time_2_round = round(time_2, 1)
 
-                log_message = (f"{func.__name__} ok. \n"
-                               f"Start time: {time_1_round}. \n"
-                               f"End time: {time_2_round}.\n"
-                               f"Result: {result}\n")
+                log_message = (
+                    f"{func.__name__} ok. \n"
+                    f"Start time: {time_1_round}. \n"
+                    f"End time: {time_2_round}.\n"
+                    f"Result: {result}\n"
+                )
                 if filename and filename.endswith(".txt"):
                     with open(filename, "a", encoding="utf-8") as file:
                         file.write(log_message)
@@ -33,8 +35,9 @@ def log(filename: str = None):
                 return result
 
             except Exception as e:
-                error_message = (f"{func.__name__} ERROR: {e.__class__.__name__}. \n"
-                                 f"Inputs: args={args}, kwargs={kwargs}\n")
+                error_message = (
+                    f"{func.__name__} ERROR: {e.__class__.__name__}. \n" f"Inputs: args={args}, kwargs={kwargs}\n"
+                )
 
                 if filename and filename.endswith(".txt"):
                     with open(filename, "a", encoding="utf-8") as file:
