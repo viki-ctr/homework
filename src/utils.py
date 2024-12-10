@@ -1,7 +1,11 @@
 import json
+import os
+
+base_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(base_dir, "..", "data", "operations.json")
 
 
-def transaction(file="C:/Users/vikas/py_prj/homework/data/operations.json"):
+def transaction(file=file_path):
     """Функция, принимающая путь до JSON-файла и возвращающая список словарей или пустой список"""
     with open(file, "r", encoding="UTF-8") as f:
         try:
@@ -14,5 +18,5 @@ def transaction(file="C:/Users/vikas/py_prj/homework/data/operations.json"):
             return []
 
 
-# data = transaction(file="C:/Users/vikas/py_prj/homework/data/operations.json")
-print(transaction())
+# data = transaction(file=file_path)
+# print(data)
