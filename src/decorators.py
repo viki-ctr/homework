@@ -1,10 +1,14 @@
+import os
 from functools import wraps
 from time import sleep, time
 from typing import AnyStr
 
 
-def log(filename: str = None):
+def log(filename: str):
     """Декоратор, который автоматически логирует начало и конец выполнения функции, ее результаты/возникшие ошибки"""
+
+    if filename and isinstance(filename, str):
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
 
     def decorator(func):
         @wraps(func)
@@ -16,18 +20,32 @@ def log(filename: str = None):
                 time_2 = time()
                 time_2_round = round(time_2, 1)
 
-                if filename == str and ".txt" in filename:
-                    with open(filename, "a") as file:
-                        file.write(f"{func.__name__} ok. \nStart time: {time_1_round}. \nEnd time: {time_2_round}.")
-                else:
-                    print(f"{func.__name__} ok. \nStart time: {time_1_round}. \nEnd time: {time_2_round}.")
-                return result
-            except Exception as e:
-                if filename:
+                log_message = (
+                    f"{func.__name__} ok. \n"
+                    f"Start time: {time_1_round}. \n"
+                    f"End time: {time_2_round}.\n"
+                    f"Result: {result}\n"
+                )
+                if filename and filename.endswith(".txt"):
                     with open(filename, "a", encoding="utf-8") as file:
-                        file.write(f"{func.__name__} ERROR : {e.__class__.__name__}. Inputs: {args}, {kwargs}")
+                        file.write(log_message)
                 else:
-                    print(f"{func.__name__} ERROR : {e.__class__.__name__}. Inputs: {args}, {kwargs}")
+                    print(log_message)
+
+                return result
+
+            except Exception as e:
+                error_message = (
+                    f"{func.__name__} ERROR: {e.__class__.__name__}. \n" f"Inputs: args={args}, kwargs={kwargs}\n"
+                )
+
+                if filename and filename.endswith(".txt"):
+                    with open(filename, "a", encoding="utf-8") as file:
+                        file.write(error_message)
+                else:
+                    print(error_message)
+
+                raise
 
         return wrapper
 
