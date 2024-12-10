@@ -1,0 +1,4 @@
+my_function ok. 
+Start time: 1733862001.9. 
+End time: 1733862006.9.
+Result: 3
