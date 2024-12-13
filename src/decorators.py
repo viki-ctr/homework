@@ -52,7 +52,7 @@ def log(filename: str):
     return decorator
 
 
-@log(filename="logs/mylog.txt")
+@log(filename="log/mylog.txt")
 def my_function(x, y):
     sleep(5)
     return x + y
