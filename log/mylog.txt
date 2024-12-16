@@ -18,3 +18,33 @@ End time: 1733869559.3.
 Result: 3
 my_function ERROR: TypeError. 
 Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1734189789.4. 
+End time: 1734189794.4.
+Result: 3
+my_function ok. 
+Start time: 1734189795.7. 
+End time: 1734189795.7.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1734272270.6. 
+End time: 1734272275.6.
+Result: 3
+my_function ok. 
+Start time: 1734272277.0. 
+End time: 1734272277.0.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1734273802.6. 
+End time: 1734273807.6.
+Result: 3
+my_function ok. 
+Start time: 1734273809.2. 
+End time: 1734273809.2.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}
