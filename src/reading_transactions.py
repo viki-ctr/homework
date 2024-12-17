@@ -33,4 +33,4 @@ def get_excel_transactions(xlsx_doc=file_path_excel) -> list[dict[Any, Any]]:
         return []
 
 
-print(get_excel_transactions())
+# print(get_excel_transactions())
