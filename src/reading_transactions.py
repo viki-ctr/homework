@@ -17,7 +17,7 @@ def get_csv_transactions(csv_doc=file_path_csv) -> list[dict[Any, Any]]:
         return []
 
 
-# print(get_csv_transactions())
+print(get_csv_transactions())
 
 
 base_dir = os.path.dirname(os.path.abspath(__file__))

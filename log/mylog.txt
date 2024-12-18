@@ -48,3 +48,83 @@ End time: 1734273809.2.
 Result: 3
 my_function ERROR: TypeError. 
 Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1734471458.4. 
+End time: 1734471463.4.
+Result: 3
+my_function ok. 
+Start time: 1734471464.8. 
+End time: 1734471464.8.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1734554580.7. 
+End time: 1734554585.7.
+Result: 3
+my_function ok. 
+Start time: 1734554587.0. 
+End time: 1734554587.0.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1734557528.5. 
+End time: 1734557533.5.
+Result: 3
+my_function ok. 
+Start time: 1734557534.7. 
+End time: 1734557534.7.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1734557735.7. 
+End time: 1734557740.7.
+Result: 3
+my_function ok. 
+Start time: 1734557741.6. 
+End time: 1734557741.6.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1734559107.9. 
+End time: 1734559112.9.
+Result: 3
+my_function ok. 
+Start time: 1734559113.7. 
+End time: 1734559113.7.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1734559523.6. 
+End time: 1734559528.6.
+Result: 3
+my_function ok. 
+Start time: 1734559529.2. 
+End time: 1734559529.2.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1734560130.3. 
+End time: 1734560135.3.
+Result: 3
+my_function ok. 
+Start time: 1734560136.0. 
+End time: 1734560136.0.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}
+my_function ok. 
+Start time: 1734561029.9. 
+End time: 1734561034.9.
+Result: 3
+my_function ok. 
+Start time: 1734561035.7. 
+End time: 1734561035.7.
+Result: 3
+my_function ERROR: TypeError. 
+Inputs: args=(1, 'a'), kwargs={}

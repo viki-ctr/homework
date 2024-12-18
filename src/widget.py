@@ -8,8 +8,8 @@ from src.masks import get_mask_account, get_mask_card_number
 
 def mask_account_card(type_of_payment: str) -> str:
     """Функция, обрабатывающая информацию о картах и счетах"""
-    name_card = ["Maestro", "MasterCard", "Visa Classic", "Visa Platinum", "Visa Gold"]
-    if len(type_of_payment) > 21:
+    name_card = ["Maestro", "Mastercard", "Visa Classic", "Visa Platinum", "Visa Gold", "Visa", "American Express", "Discover", "МИР", "MasterCard"]
+    if len(type_of_payment) > 20:
         type_of_payment_list = type_of_payment.split()
         number_date = type_of_payment_list[-1]
         del type_of_payment_list[-1]
@@ -63,5 +63,5 @@ def get_date(info: Union[str, list]) -> str:
         return f"Ошибка при обработке даты: {e}"
 
 
-# print(mask_account_card('Maestro 1596837868705199'))
+print(mask_account_card('Mastercard 7158300734726758'))
 # print(get_date("2024-11-19T12:34:56.789"))

@@ -6,14 +6,14 @@ def filter_by_currency(transactions_list: list[dict[Any, Any]], currency="USD") 
     try:
         if len(transactions_list) > 0:
             for x in transactions_list:
-                if x["operationAmount"]["currency"]["code"] == currency:
+                if x["operationAmount"]["currency"]["code"] == currency or x["currency_code"] == currency:
                     yield x
-                elif x["operationAmount"]["currency"]["code"] != currency:
+                elif x["operationAmount"]["currency"]["code"] != currency or x["currency_code"] != currency:
                     yield "Введите нужную валюту"
                 else:
                     yield "Проверьте корректность данных"
         else:
-            raise ValueError("Невалидные значения")
+            raise ValueError ("Невалидные значения") or KeyError ("Невалидные значения")
     except StopIteration:
         print("Введите новые данные")
         return
