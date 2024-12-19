@@ -37,6 +37,6 @@ def transaction(file=file_path_json):
             logging.error(f"Произошла ошибка {ex}", exc_info=True)
             return []
 
-
+#
 # data = transaction(file=file_path_json)
 # print(data)

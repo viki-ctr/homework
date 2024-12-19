@@ -17,7 +17,7 @@ def get_csv_transactions(csv_doc=file_path_csv) -> list[dict[Any, Any]]:
         return []
 
 
-# print(get_csv_transactions())
+print(get_csv_transactions())
 
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -33,4 +33,4 @@ def get_excel_transactions(xlsx_doc=file_path_excel) -> list[dict[Any, Any]]:
         return []
 
 
-print(get_excel_transactions())
+# print(get_excel_transactions())

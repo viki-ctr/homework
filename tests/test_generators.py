@@ -37,8 +37,8 @@ def test_filter_by_currency(transactions_list, currency="USD"):
         next(gen)
 
 
-def test_filter_by_currency_invalid(transactions_list_invalid, currency="USD"):
-    gen = filter_by_currency(transactions_list_invalid, "USD")
+def test_invalid_currency(set_up):
+    gen = filter_by_currency(set_up, currency="GBP")
     assert next(gen) == "Введите нужную валюту"
 
 
@@ -47,6 +47,11 @@ def test_filter_by_currency_empty(transactions_list_empty, currency="USD"):
     with pytest.raises(ValueError) as exc_info:
         next(gen)
     assert str(exc_info.value) == "Невалидные значения"
+
+
+def test_other_currency(set_up):
+    gen = filter_by_currency(set_up, currency="EUR")
+    assert next(gen) == {"operationAmount": {"currency": {"code": "EUR"}}, "currency_code": "EUR"}
 
 
 def test_transaction_descriptions(transactions_list):
